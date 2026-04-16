@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html class="dark" lang="sl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tomaž Pajnič | Notranje Oblikovanje</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#ffdea8",
+                    "secondary-fixed": "#fcdfad",
+                    "surface-variant": "#353532",
+                    "secondary-fixed-dim": "#dec393",
+                    "tertiary-container": "#a29f96",
+                    "surface-container": "#20201d",
+                    "surface-container-highest": "#353532",
+                    "on-primary": "#402d06",
+                    "error-container": "#93000a",
+                    "inverse-surface": "#e5e2de",
+                    "error": "#ffb4ab",
+                    "on-primary-fixed": "#271900",
+                    "on-secondary": "#3e2e0b",
+                    "on-primary-container": "#47330b",
+                    "surface-tint": "#e2c28e",
+                    "primary": "#e2c28e",
+                    "tertiary": "#cac6bd",
+                    "on-surface": "#e5e2de",
+                    "inverse-on-surface": "#31302e",
+                    "on-tertiary": "#31312a",
+                    "tertiary-fixed": "#e6e2d9",
+                    "outline-variant": "#4d463b",
+                    "tertiary-fixed-dim": "#cac6bd",
+                    "surface": "#141311",
+                    "on-background": "#e5e2de",
+                    "on-primary-fixed-variant": "#59431b",
+                    "surface-bright": "#3a3937",
+                    "surface-dim": "#141311",
+                    "on-tertiary-container": "#373630",
+                    "on-tertiary-fixed-variant": "#484740",
+                    "on-secondary-fixed-variant": "#57441f",
+                    "on-secondary-fixed": "#261900",
+                    "inverse-primary": "#735b30",
+                    "on-secondary-container": "#ccb283",
+                    "secondary": "#dec393",
+                    "primary-fixed-dim": "#e2c28e",
+                    "on-error": "#690005",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-low": "#1c1c19",
+                    "on-surface-variant": "#d0c5b6",
+                    "primary-container": "#b89b6a",
+                    "outline": "#998f82",
+                    "surface-container-high": "#2a2a28",
+                    "surface-container-lowest": "#0e0e0c",
+                    "secondary-container": "#57441f",
+                    "background": "#141311",
+                    "on-tertiary-fixed": "#1c1c16"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>body {
+    background-color: #141311;
+    color: #e5e2de;
+    -webkit-font-smoothing: antialiased
+    }
+
+.custom-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2px
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24
+    }</style>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+    <link href="../assets/css/animations.css" rel="stylesheet"/>
+</head>
+<body class="font-body selection:bg-primary selection:text-on-primary bg-surface text-on-surface">
+
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 h-20 bg-[#141311] dark:bg-[#141311] border-b-[0.5px] border-[#4d463b] flex justify-between items-center px-6 md:px-12 2xl:px-[56px] transition-all duration-300">
+    <a href="../index.html" class="text-xl font-serif tracking-widest text-[#e2c28e]">TOMAŽ PAJNIČ</a>
+    <div class="hidden md:flex items-center space-x-12">
+        <a class="text-[#7A7870] hover:text-[#e2c28e] transition-colors duration-300 label-md text-xs tracking-widest uppercase uppercase" href="../index.html">Domov</a>
+        <a class="text-[#e2c28e] border-b border-[#e2c28e] pb-1 hover:text-[#e2c28e] transition-colors duration-300 label-md text-xs tracking-widest uppercase" href="../projekti.html">Projekti</a>
+        <a class="text-[#7A7870] hover:text-[#e2c28e] transition-colors duration-300 label-md text-xs tracking-widest uppercase" href="../storitve.html">Storitve</a>
+        <a class="text-[#7A7870] hover:text-[#e2c28e] transition-colors duration-300 label-md text-xs tracking-widest uppercase" href="../o-meni.html">O meni</a>
+        <a class="text-[#7A7870] hover:text-[#e2c28e] transition-colors duration-300 label-md text-xs tracking-widest uppercase" href="../kontakt.html">Kontakt</a>
+    </div>
+    <button id="mobile-menu-btn" class="md:hidden text-[#e2c28e] flex items-center justify-center">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+</nav>
+
+<!-- Mobile Menu Tray -->
+<div id="mobile-menu" class="fixed top-20 left-0 w-full h-screen bg-[#141311] z-40 hidden flex-col items-center pt-12 space-y-8 md:hidden">
+    <a class="text-[#7A7870] text-lg tracking-widest duration-300 label-md uppercase" href="../index.html">Domov</a>
+    <a class="text-[#e2c28e] border-b border-[#e2c28e] pb-1 text-lg tracking-widest duration-300 label-md uppercase" href="../projekti.html">Projekti</a>
+    <a class="text-[#7A7870] text-lg tracking-widest duration-300 label-md uppercase" href="../storitve.html">Storitve</a>
+    <a class="text-[#7A7870] text-lg tracking-widest duration-300 label-md uppercase" href="../o-meni.html">O meni</a>
+    <a class="text-[#7A7870] text-lg tracking-widest duration-300 label-md uppercase" href="../kontakt.html">Kontakt</a>
+</div>
+
+<main class="pt-[100px]">
+    <!-- Hero Header -->
+    <section class="h-[50vh] min-h-[400px] relative">
+        <img src="../assets/images/projekti/stanovanje-pod-gradom/Kuhinja-z-jedilnico-miza-stoli.jpg" class="w-full h-full object-cover grayscale opacity-60">
+        <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+        <div class="absolute bottom-12 left-0 w-full px-[56px] max-w-7xl mx-auto">
+            <span class="text-[0.7rem] uppercase tracking-[0.25em] text-[#e2c28e] font-semibold mb-4 block">Projekt</span>
+            <h1 class="font-headline text-[3.5rem] md:text-[4.5rem] leading-[1.1] text-on-surface mb-4" data-aos="fade-up">Prenova staromeščanskega stanovanja v Ljubljani</h1>
+        </div>
+    </section>
+
+    <!-- Details and Text -->
+    <section class="py-24 px-[56px] max-w-7xl mx-auto flex flex-col lg:flex-row gap-16">
+        <div class="lg:w-1/3">
+            <div class="grid grid-cols-1 gap-8 mb-12 bg-surface-container-low p-8 border-[0.5px] border-outline-variant border-l-[2px] border-l-primary">
+                
+        <div>
+            <p class="text-[0.65rem] uppercase tracking-[0.18em] text-[#7A7870] mb-1">Lokacija</p>
+            <p class="text-sm text-[#e5e2de]">:Ljubljana</p>
+        </div>
+        
+        <div>
+            <p class="text-[0.65rem] uppercase tracking-[0.18em] text-[#7A7870] mb-1">Leto projekta</p>
+            <p class="text-sm text-[#e5e2de]">:2020</p>
+        </div>
+        
+        <div>
+            <p class="text-[0.65rem] uppercase tracking-[0.18em] text-[#7A7870] mb-1">Čas izvedbe</p>
+            <p class="text-sm text-[#e5e2de]">:6 mesecev</p>
+        </div>
+        
+        <div>
+            <p class="text-[0.65rem] uppercase tracking-[0.18em] text-[#7A7870] mb-1">Avtor projekta</p>
+            <p class="text-sm text-[#e5e2de]">:Tomaž Pajnič</p>
+        </div>
+        
+            </div>
+        </div>
+        <div class="lg:w-2/3">
+            <p class="text-[#7A7870] leading-relaxed mb-6 font-body text-sm max-w-2xl">
+                V starem mestnem centru Ljubljane sem zasnoval projekt prenove staromeščanskega stanovanja v Ljubljani, kjer sta naročnika notranjega oblikovanja želela popolnoma prenoviti stanovanje. Za notranjega oblikovalca sta se odločila zaradi zahtevnosti prenove. Njuno pričakovanje je bilo predvsem, da ustvarimo prostor, ki bo funkcionalen, zračen in unikaten.
+            </p>
+            <p class="text-[#7A7870] leading-relaxed mb-6 font-body text-sm max-w-2xl">
+                Projekt notranjega oblikovanja je obsegal celostno prenovo, torej pripravo tlorisov, idejno zasnovo, izris razsvetljave, 3D vizualizacije in pomoč pri izvedbi.
+            </p>
+            <p class="text-[#7A7870] leading-relaxed mb-6 font-body text-sm max-w-2xl">
+                V prvi fazi notranjega oblikovanja smo prilagodili tloris in na novo zasnovali prostore. Naš glavni cilj je bil, da kuhinjo, jedilnico in dnevno sobo združimo v velik odprt prostor. Z rušitvijo nekaj sten smo naredili prostor zračen in svetel. Osnovo stila je predstavljal minimalizem, ki pa smo mu dodali dušo z unikatno razsvetljavo.
+            </p>
+            <p class="text-[#7A7870] leading-relaxed mb-4 font-body text-sm max-w-2xl">
+                V projektu smo kot rdečo nit notranjega oblikovanja uporabili tri glavne materiale, ki se pojavljajo skozi celotno stanovanje:
+            </p>
+            <ul class="text-[#7A7870] leading-relaxed mb-6 font-body text-sm max-w-2xl list-[circle] pl-5 space-y-2">
+                <li><strong class="text-[#e2c28e] font-normal">Les</strong>, ki nam da toplino in deluje kot protiutež precej drznemu dizajnu.</li>
+                <li><strong class="text-[#e2c28e] font-normal">Kamen</strong>, ki je uporabljen pri obokastem stropu v dnevni sobi.</li>
+                <li><strong class="text-[#e2c28e] font-normal">Kovina</strong>, ki poskrbi za eleganco in je spretno uporabljena pri detajlih.</li>
+            </ul>
+            <p class="text-[#7A7870] leading-relaxed mb-6 font-body text-sm max-w-2xl">
+                Oblika, ki je služila kot vodilo notranjega oblikovanja, je krog, katerega je moč zaslediti skozi celotno stanovanje. Pridih organskih linij zmehča strogost minimalističnega stila.
+            </p>
+            <p class="text-[#7A7870] leading-relaxed mb-6 font-body text-sm max-w-2xl">
+                Pri izbiri pohištva smo se osredotočili predvsem na funkcionalnost in skrbno izbiro vsakega izmed elementov, da bi kar najbolj služil svojemu namenu. Želeli smo čim bolj izkoristiti prostor, to pa smo dosegli z vgradnimi omarami in skritim pohištvom. Tudi v spalnici smo sledili načelu čim bolj izkoriščenega prostora. Odločili smo se za dvignjeno posteljo, s čimer smo pridobili precej novega prostora za shranjevanje.
+            </p>
+            <p class="text-[#7A7870] leading-relaxed mb-6 font-body text-sm max-w-2xl">
+                Za dober ambient pa smo poskrbeli z izbiro razsvetljave, ki je ključ do dobrega interierja. Za primarno razsvetljavo smo uporabili led trakove, ki nas z organskimi linijami popeljejo skozi prostore. Uporabili smo tudi ambientalno razsvetljavo, skrito v omarah za posteljo in pod policami z namenom, da poudari pomembne detajle in pričara prijeten ambient.
+            </p>
+            <p class="text-[#7A7870] leading-relaxed mb-6 font-body text-sm max-w-2xl">
+                V času načrtovanja in oblikovanja smo poleg želenega izgleda stanovanja dosegli glavni cilj; <strong class="text-[#e2c28e] font-normal">stanovanje je postalo brezčasno oblikovan dom</strong>.
+            </p>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="pb-24 px-[56px]">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+        <div class="aspect-square overflow-hidden bg-surface-container-low group" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+            <img src="../assets/images/projekti/stanovanje-pod-gradom/Kuhinja-stanovanje-prenova.jpg" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+        </div>
+        <div class="aspect-square overflow-hidden bg-surface-container-low group" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+            <img src="../assets/images/projekti/stanovanje-pod-gradom/Jedilnica-pohištvo-tlorisni-pogled.jpg" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+        </div>
+        <div class="aspect-square overflow-hidden bg-surface-container-low group" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+            <img src="../assets/images/projekti/stanovanje-pod-gradom/Notranje-oblikovanje-bivalnega-prostora.jpg" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+        </div>
+        <div class="aspect-square overflow-hidden bg-surface-container-low group" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+            <img src="../assets/images/projekti/stanovanje-pod-gradom/sedežna-garnitura-dnevna-soba.jpg" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+        </div>
+        <div class="aspect-square overflow-hidden bg-surface-container-low group" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+            <img src="../assets/images/projekti/stanovanje-pod-gradom/Razporeditev-dnevnega-prostora.jpg" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+        </div>
+        <div class="aspect-square overflow-hidden bg-surface-container-low group" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+            <img src="../assets/images/projekti/stanovanje-pod-gradom/Bivalni-prostor-minimalizem.jpg" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+        </div>
+        <div class="aspect-square overflow-hidden bg-surface-container-low group" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+            <img src="../assets/images/projekti/stanovanje-pod-gradom/Postelja-pohištvo-knavf-stena.jpg" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+        </div>
+        <div class="aspect-square overflow-hidden bg-surface-container-low group" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+            <img src="../assets/images/projekti/stanovanje-pod-gradom/Spalnica-dekoracija-ambientalna-svetloba.jpg" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+        </div>
+        <div class="aspect-square overflow-hidden bg-surface-container-low group" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+            <img src="../assets/images/projekti/stanovanje-pod-gradom/Tapeta-spalnica.jpg" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+        </div>
+        <div class="aspect-square overflow-hidden bg-surface-container-low group" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+            <img src="../assets/images/projekti/stanovanje-pod-gradom/Celostna-preova-stanovanja.jpg" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+        </div>
+        <div class="aspect-square overflow-hidden bg-surface-container-low group" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+            <img src="../assets/images/projekti/stanovanje-pod-gradom/Razsvetljava-hodnik-luči.jpg" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+        </div>
+        <div class="aspect-square overflow-hidden bg-surface-container-low group" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+            <img src="../assets/images/projekti/stanovanje-pod-gradom/Led-razsvetljava-prostora.jpg" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+        </div>
+        <div class="aspect-square overflow-hidden bg-surface-container-low group" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+            <img src="../assets/images/projekti/stanovanje-pod-gradom/Mizarski-načrti-kosovnega-pohištva.jpg" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+        </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA Banner -->
+    <section class="py-32 bg-surface-container-lowest border-y-[0.5px] border-outline-variant">
+        <div class="max-w-4xl mx-auto text-center px-6 md:px-12 2xl:px-[56px]">
+            <h2 class="font-headline text-[3rem] md:text-[4rem] mb-6" data-aos="fade-up" data-aos-delay="100">Začnimo skupaj.</h2>
+            <p class="text-tertiary mb-12 max-w-xl mx-auto">Ste pripravljeni spremeniti svoj bivalni prostor v umetnino?
+                Rezervirajte svoj termin za uvodni posvet.</p>
+            <div class="w-[60px] h-[1px] bg-primary mx-auto mb-12"></div>
+            <a href="../kontakt.html"
+                class="inline-block bg-primary text-on-primary px-12 py-5 font-label text-[0.8rem] tracking-[0.2em] uppercase font-bold hover:bg-primary-container transition-all active:scale-95">
+                Rezerviraj sestanek →
+            </a>
+        </div>
+    </section>
+</main>
+
+
+<!-- Footer -->
+
+
+
+
+
+<!-- Footer -->
+<footer class="bg-[#0e0e0c] dark:bg-[#0e0e0c] w-full py-20 px-6 md:px-12 2xl:px-[56px] border-t-[0.5px] border-[#4d463b]">
+<div class="flex flex-col md:flex-row justify-between items-start max-w-[1600px] mx-auto w-full">
+<div>
+<div class="text-2xl font-serif text-[#e2c28e] mb-8">TOMAŽ PAJNIČ</div>
+<p class="text-[#7A7870] label-md max-w-xs leading-loose text-xs tracking-widest uppercase">
+    Ustvarjamo prostore, ki dihajo z vami. <br/> Brezčasno oblikovanje za sodobno bivanje.
+</p>
+</div>
+<div class="mt-12 md:mt-0 flex flex-col space-y-4">
+<h4 class="label-md text-primary mb-2 text-xs tracking-widest uppercase">Povezave</h4>
+<a class="text-[#7A7870] hover:text-[#e2c28e] transition-opacity label-md text-xs tracking-widest uppercase" href="../index.html">Domov</a>
+<a class="text-[#7A7870] hover:text-[#e2c28e] transition-opacity label-md text-xs tracking-widest uppercase" href="../projekti.html">Projekti</a>
+<a class="text-[#7A7870] hover:text-[#e2c28e] transition-opacity label-md text-xs tracking-widest uppercase" href="../kontakt.html">Kontakt</a>
+</div>
+<div class="mt-12 md:mt-0">
+<h4 class="label-md text-primary mb-6 text-xs tracking-widest uppercase">Kontakt</h4>
+                <div class="flex flex-col space-y-2">
+                    <p class="text-[#7A7870] label-md text-xs tracking-widest uppercase">Tomaž Pajnič sp<br>Smrjene 71, 2145 Škofljica</p>
+                    <a href="mailto:tomaz@notranje-oblikovanje.si" class="text-[#7A7870] hover:text-[#e2c28e] transition-opacity label-md text-xs tracking-widest lowercase pt-2">tomaz@notranje-oblikovanje.si</a>
+                    <a href="tel:+38651254064" class="text-[#7A7870] hover:text-[#e2c28e] transition-opacity label-md text-xs tracking-widest uppercase">051 254 064</a>
+                </div>
+<div class="mt-16 text-[#7A7870] label-md text-[0.65rem] tracking-widest uppercase">
+    © 2026 TOMAŽ PAJNIČ. ALL RIGHTS RESERVED.
+</div>
+</div>
+</div>
+</footer>
+
+
+<script id="mobile-nav-script">
+    document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const icon = btn ? btn.querySelector('span') : null;
+        if(btn && menu && icon) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                menu.classList.toggle('flex');
+                if (menu.classList.contains('hidden')) {
+                    icon.innerText = 'menu';
+                } else {
+                    icon.innerText = 'close';
+                }
+            });
+        }
+    });
+</script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../assets/js/animations.js"></script>
+</body>
+
+</html>

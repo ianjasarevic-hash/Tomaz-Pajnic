@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html class="dark" lang="sl">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Tomaž Pajnič | Notranje Oblikovanje - Storitve</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#e2c28e",
+                        "on-tertiary": "#31312a",
+                        "on-secondary-fixed-variant": "#57441f",
+                        "tertiary": "#cac6bd",
+                        "on-surface": "#e5e2de",
+                        "on-primary": "#402d06",
+                        "inverse-on-surface": "#31302e",
+                        "surface-container-lowest": "#0e0e0c",
+                        "surface-container-high": "#2a2a28",
+                        "on-primary-fixed": "#271900",
+                        "on-primary-container": "#47330b",
+                        "outline": "#998f82",
+                        "on-tertiary-container": "#373630",
+                        "on-background": "#e5e2de",
+                        "surface-dim": "#141311",
+                        "secondary": "#dec393",
+                        "surface-variant": "#353532",
+                        "on-secondary": "#3e2e0b",
+                        "on-error-container": "#ffdad6",
+                        "surface": "#141311",
+                        "on-tertiary-fixed": "#1c1c16",
+                        "tertiary-container": "#a29f96",
+                        "on-secondary-container": "#ccb283",
+                        "secondary-fixed-dim": "#dec393",
+                        "outline-variant": "#4d463b",
+                        "on-secondary-fixed": "#261900",
+                        "inverse-primary": "#735b30",
+                        "background": "#141311",
+                        "surface-container": "#20201d",
+                        "on-tertiary-fixed-variant": "#484740",
+                        "error-container": "#93000a",
+                        "primary-fixed-dim": "#e2c28e",
+                        "on-error": "#690005",
+                        "surface-bright": "#3a3937",
+                        "secondary-fixed": "#fcdfad",
+                        "surface-container-highest": "#353532",
+                        "surface-container-low": "#1c1c19",
+                        "primary-fixed": "#ffdea8",
+                        "tertiary-fixed": "#e6e2d9",
+                        "on-primary-fixed-variant": "#59431b",
+                        "tertiary-fixed-dim": "#cac6bd",
+                        "on-surface-variant": "#d0c5b6",
+                        "inverse-surface": "#e5e2de",
+                        "primary-container": "#b89b6a",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#57441f",
+                        "primary": "#e2c28e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #141311;
+            color: #e5e2de;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-nav {
+            background: rgba(20, 19, 17, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+    <link href="assets/css/animations.css" rel="stylesheet"/>
+    <!-- GSAP & Lenis -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+</head>
+
+<body class="antialiased">
+
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="curtain-l"></div>
+        <div class="curtain-r"></div>
+        <div class="loader-content">
+            <div class="loader-logo">TOMAŽ PAJNIČ</div>
+        </div>
+    </div>
+
+    <!-- TopAppBar -->
+    <nav
+        class="fixed top-0 w-full z-50 h-20 bg-[#141311] dark:bg-[#141311] border-b-[0.5px] border-[#4d463b] flex justify-between items-center px-6 md:px-12 2xl:px-[56px] transition-all duration-300">
+        <a href="index.html" class="text-xl font-serif tracking-widest text-[#e2c28e]">TOMAŽ PAJNIČ</a>
+        <div class="hidden md:flex items-center space-x-12">
+            <a class="text-[#7A7870] hover:text-[#e2c28e] transition-colors duration-300 label-md text-xs tracking-widest uppercase uppercase"
+                href="index.html">Domov</a>
+            <a class="text-[#7A7870] hover:text-[#e2c28e] transition-colors duration-300 label-md text-xs tracking-widest uppercase"
+                href="projekti.html">Projekti</a>
+            <a class="text-[#e2c28e] border-b border-[#e2c28e] pb-1 hover:text-[#e2c28e] transition-colors duration-300 label-md text-xs tracking-widest uppercase"
+                href="storitve.html">Storitve</a>
+            <a class="text-[#7A7870] hover:text-[#e2c28e] transition-colors duration-300 label-md text-xs tracking-widest uppercase"
+                href="o-meni.html">O meni</a>
+            <a class="text-[#7A7870] hover:text-[#e2c28e] transition-colors duration-300 label-md text-xs tracking-widest uppercase"
+                href="kontakt.html">Kontakt</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden text-[#e2c28e] flex items-center justify-center">
+            <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu Tray -->
+    <div id="mobile-menu"
+        class="fixed top-20 left-0 w-full h-screen bg-[#141311] z-40 hidden flex-col items-center pt-12 space-y-8 md:hidden">
+        <a class="text-[#7A7870] text-lg tracking-widest duration-300 label-md uppercase" href="index.html">Domov</a>
+        <a class="text-[#7A7870] text-lg tracking-widest duration-300 label-md uppercase"
+            href="projekti.html">Projekti</a>
+        <a class="text-[#e2c28e] border-b border-[#e2c28e] pb-1 text-lg tracking-widest duration-300 label-md uppercase"
+            href="storitve.html">Storitve</a>
+        <a class="text-[#7A7870] text-lg tracking-widest duration-300 label-md uppercase" href="o-meni.html">O meni</a>
+        <a class="text-[#7A7870] text-lg tracking-widest duration-300 label-md uppercase"
+            href="kontakt.html">Kontakt</a>
+    </div>
+
+
+    <!-- TopAppBar -->
+
+
+    <!-- Mobile Menu Tray -->
+
+
+
+    <!-- TopAppBar -->
+
+
+    <!-- Mobile Menu Tray -->
+
+
+    <main>
+        <!-- Section 1: SPLIT HERO -->
+        <section class="relative pt-20 flex flex-col md:flex-row h-auto md:h-[614px] overflow-hidden">
+            <div class="w-full md:w-3/5 h-64 md:h-full relative overflow-hidden group" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+                <img class="absolute inset-0 w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
+                    data-alt="Luxurious dark modern interior with charcoal grey walls, minimalist furniture, subtle gold accents and soft cinematic lighting"
+                    src="assets/images/owner/notranje_oblikovanje_cena_desktop.jpg" />
+            </div>
+            <div class="w-full md:w-2/5 bg-[#141412] flex flex-col justify-center px-6 md:px-12 2xl:px-[56px] py-12">
+                <div class="flex items-center gap-4 mb-6">
+                    <span class="text-[0.75rem] uppercase tracking-[0.18em] text-primary font-label">Storitve</span>
+                    <div class="h-[0.5px] w-24 bg-primary"></div>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-headline text-[#F0EBE1] leading-tight mb-6 reveal-text">
+                    Od ideje do izvedbe — <br /> z vami na vsakem koraku.
+                </h1>
+                <p class="text-on-surface-variant font-body text-[0.875rem] leading-relaxed mb-8 max-w-md">
+                    Ponujamo celostno storitev notranjega oblikovanja, ki združuje estetiko z vrhunsko funkcionalnostjo.
+                    Vaš prostor postane zgodba o slogu in udobju.
+                </p>
+                <div class="w-12 h-[1px] bg-primary-container"></div>
+            </div>
+        </section>
+        <!-- Section 2: SERVICES GRID -->
+        <section class="bg-[#0D0D0B] py-24 px-6 md:px-14">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-0.5 bg-outline-variant/30 max-w-[1600px] mx-auto">
+                <!-- Card 1 -->
+                <div
+                    class="bg-[#1C1C19] p-12 border-[0.5px] border-primary/10 hover:border-primary transition-all duration-500 group" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+                    <div class="mb-8">
+                        <span class="material-symbols-outlined text-primary text-4xl"
+                            style="font-variation-settings: 'wght' 200;">view_in_ar</span>
+                    </div>
+                    <h3 class="text-xl font-headline text-on-surface mb-4">Idejni projekt & 3D vizualizacija</h3>
+                    <p class="text-on-surface-variant font-body text-[0.875rem] mb-8 leading-relaxed">
+                        Celovita prostorska zasnova, ki vključuje tlorisne ureditve in realistične 3D upodobitve vašega
+                        bodočega doma še pred začetkom del.
+                    </p>
+                    <a class="text-[0.75rem] uppercase tracking-[0.18em] text-primary inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform duration-300"
+                        href="#">
+                        Izvedi več <span class="material-symbols-outlined text-[1rem]">arrow_right_alt</span>
+                    </a>
+                </div>
+                <!-- Card 2 -->
+                <div
+                    class="bg-[#1C1C19] p-12 border-[0.5px] border-primary/10 hover:border-primary transition-all duration-500 group" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+                    <div class="mb-8">
+                        <span class="material-symbols-outlined text-primary text-4xl"
+                            style="font-variation-settings: 'wght' 200;">palette</span>
+                    </div>
+                    <h3 class="text-xl font-headline text-on-surface mb-4">Svetovanje pri materialih & barvah</h3>
+                    <p class="text-on-surface-variant font-body text-[0.875rem] mb-8 leading-relaxed">
+                        Strokovno svetovanje pri izbiri zaključnih materialov, tekstilij in barvnih palet, ki odražajo
+                        vaš osebni slog in ustvarjajo harmonijo.
+                    </p>
+                    <a class="text-[0.75rem] uppercase tracking-[0.18em] text-primary inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform duration-300"
+                        href="#">
+                        Izvedi več <span class="material-symbols-outlined text-[1rem]">arrow_right_alt</span>
+                    </a>
+                </div>
+                <!-- Card 3 -->
+                <div
+                    class="bg-[#1C1C19] p-12 border-[0.5px] border-primary/10 hover:border-primary transition-all duration-500 group" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+                    <div class="mb-8">
+                        <span class="material-symbols-outlined text-primary text-4xl"
+                            style="font-variation-settings: 'wght' 200;">key</span>
+                    </div>
+                    <h3 class="text-xl font-headline text-on-surface mb-4">Celostna prenova na ključ</h3>
+                    <p class="text-on-surface-variant font-body text-[0.875rem] mb-8 leading-relaxed">
+                        Koordiniramo vse od začetne ideje do končne izvedbe. Poskrbimo za izbiro izvajalcev, nadzor nad
+                        deli in pravočasno predajo prostora.
+                    </p>
+                    <a class="text-[0.75rem] uppercase tracking-[0.18em] text-primary inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform duration-300"
+                        href="#">
+                        Izvedi več <span class="material-symbols-outlined text-[1rem]">arrow_right_alt</span>
+                    </a>
+                </div>
+                <!-- Card 4 -->
+                <div
+                    class="bg-[#1C1C19] p-12 border-[0.5px] border-primary/10 hover:border-primary transition-all duration-500 group" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+                    <div class="mb-8">
+                        <span class="material-symbols-outlined text-primary text-4xl"
+                            style="font-variation-settings: 'wght' 200;">home</span>
+                    </div>
+                    <h3 class="text-xl font-headline text-on-surface mb-4">Home staging za prodajo</h3>
+                    <p class="text-on-surface-variant font-body text-[0.875rem] mb-8 leading-relaxed">
+                        Preuredimo nepremičnino za hitrejšo in donosnejšo prodajo. S strateškim pozicioniranjem opreme
+                        poudarimo najboljše lastnosti prostora.
+                    </p>
+                    <a class="text-[0.75rem] uppercase tracking-[0.18em] text-primary inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform duration-300"
+                        href="#">
+                        Izvedi več <span class="material-symbols-outlined text-[1rem]">arrow_right_alt</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Section 3: PROCESS TIMELINE -->
+        <section class="bg-[#141412] py-24 px-6 md:px-12 2xl:px-[56px] overflow-x-hidden">
+            <div class="max-w-[1600px] mx-auto w-full">
+                <div class="text-center mb-20">
+                    <span class="text-[0.75rem] uppercase tracking-[0.18em] text-primary font-label block mb-4">Naš
+                        proces</span>
+                    <h2 class="text-4xl md:text-5xl font-headline text-on-surface reveal-text">6 korakov do vašega idealnega
+                        prostora</h2>
+                </div>
+                <div
+                    class="relative flex flex-col md:flex-row justify-between items-center gap-12 md:gap-4 mt-20">
+                    <!-- Connector line (Desktop) -->
+                    <div class="hidden md:block absolute top-6 left-0 w-full h-[0.5px] bg-outline-variant -z-10"></div>
+                    <!-- Connector line (Mobile) -->
+                    <div class="md:hidden absolute left-1/2 -translate-x-1/2 top-6 bottom-6 w-[0.5px] bg-outline-variant -z-10"></div>
+                    <!-- Step 1 -->
+                    <div class="flex flex-col items-center text-center flex-1 z-10 bg-[#141412] px-2">
+                        <div
+                            class="w-12 h-12 rounded-full border border-primary flex items-center justify-center mb-6 bg-[#141412]">
+                            <span class="text-primary text-sm font-label">1</span>
+                        </div>
+                        <span class="material-symbols-outlined text-primary-container mb-4 text-3xl">chat_bubble</span>
+                        <h4 class="text-on-surface font-headline mb-2 text-sm">Spoznavni sestanek</h4>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="flex flex-col items-center text-center flex-1 z-10 bg-[#141412] px-2">
+                        <div
+                            class="w-12 h-12 rounded-full border border-primary flex items-center justify-center mb-6 bg-[#141412]">
+                            <span class="text-primary text-sm font-label">2</span>
+                        </div>
+                        <span class="material-symbols-outlined text-primary-container mb-4 text-3xl">palette</span>
+                        <h4 class="text-on-surface font-headline mb-2 text-sm">Izbor stila & mat.</h4>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="flex flex-col items-center text-center flex-1 z-10 bg-[#141412] px-2">
+                        <div
+                            class="w-12 h-12 rounded-full border border-primary flex items-center justify-center mb-6 bg-[#141412]">
+                            <span class="text-primary text-sm font-label">3</span>
+                        </div>
+                        <span class="material-symbols-outlined text-primary-container mb-4 text-3xl">architecture</span>
+                        <h4 class="text-on-surface font-headline mb-2 text-sm">Tloris</h4>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="flex flex-col items-center text-center flex-1 z-10 bg-[#141412] px-2">
+                        <div
+                            class="w-12 h-12 rounded-full border border-primary flex items-center justify-center mb-6 bg-[#141412]">
+                            <span class="text-primary text-sm font-label">4</span>
+                        </div>
+                        <span class="material-symbols-outlined text-primary-container mb-4 text-3xl">lightbulb</span>
+                        <h4 class="text-on-surface font-headline mb-2 text-sm">Razsvetljava</h4>
+                    </div>
+                    <!-- Step 5 -->
+                    <div class="flex flex-col items-center text-center flex-1 z-10 bg-[#141412] px-2">
+                        <div
+                            class="w-12 h-12 rounded-full border border-primary flex items-center justify-center mb-6 bg-[#141412]">
+                            <span class="text-primary text-sm font-label">5</span>
+                        </div>
+                        <span class="material-symbols-outlined text-primary-container mb-4 text-3xl">view_in_ar</span>
+                        <h4 class="text-on-surface font-headline mb-2 text-sm">3D vizualizacije</h4>
+                    </div>
+                    <!-- Step 6 -->
+                    <div class="flex flex-col items-center text-center flex-1 z-10 bg-[#141412] px-2">
+                        <div
+                            class="w-12 h-12 rounded-full border border-primary flex items-center justify-center mb-6 bg-[#141412]">
+                            <span class="text-primary text-sm font-label">6</span>
+                        </div>
+                        <span class="material-symbols-outlined text-primary-container mb-4 text-3xl">folder</span>
+                        <h4 class="text-on-surface font-headline mb-2 text-sm">Izvedbena mapa</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section 4: PRICING INFO -->
+        <section class="bg-[#1C1C19] py-24 px-6 md:px-12 2xl:px-[56px]">
+            <div class="max-w-[1600px] mx-auto flex flex-col lg:flex-row gap-16 items-start">
+                <div class="lg:w-2/5">
+                    <span
+                        class="text-[0.75rem] uppercase tracking-[0.18em] text-primary font-label block mb-6">Investicija</span>
+                    <h2 class="text-4xl md:text-5xl font-headline text-on-surface mb-8 leading-[1.1] reveal-text">Transparentne cene
+                        / <br /> brez presenečenj</h2>
+                    <p class="text-on-surface-variant font-body text-[0.875rem] leading-relaxed mb-8">
+                        Verjamemo v jasne dogovore. Naša ponudba je prilagojena obsegu vašega projekta, od osnovnih
+                        nasvetov do celostnih prenov.
+                    </p>
+                    <div class="inline-block py-2 px-6 border border-primary/40 rounded-full">
+                        <span class="text-primary text-[0.75rem] uppercase tracking-widest">Osnovne storitve in
+                            cene</span>
+                    </div>
+                </div>
+                <div class="lg:w-3/5 grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+                    <!-- Pricing Card 1 -->
+                    <div class="bg-[#141412] p-10 flex flex-col min-h-[460px]">
+                        <div class="flex-grow">
+                            <h4 class="font-headline text-on-surface mb-2">Oblikovanje<br>stanovanja</h4>
+                            <ul class="space-y-2 text-[0.65rem] text-on-surface-variant uppercase tracking-widest mb-10">
+                                <li>Idejna zasnova</li>
+                                <li>Tloris</li>
+                                <li>Razsvetljava</li>
+                                <li>Vizualizacije</li>
+                                <li>Izvedbena mapa</li>
+                            </ul>
+                        </div>
+                        <div class="mb-8">
+                            <div class="text-3xl font-headline text-primary">od 45 €<span class="text-sm">/m²</span></div>
+                        </div>
+                        <a href="kontakt.html" class="w-full py-4 border border-primary/40 text-primary text-[0.7rem] font-label uppercase tracking-[0.2em] text-center hover:bg-primary hover:text-on-primary transition-all duration-300">
+                            Pošljite povpraševanje
+                        </a>
+                    </div>
+                    <!-- Pricing Card 2 (Featured) -->
+                    <div
+                        class="bg-[#141412] p-10 flex flex-col min-h-[460px] border border-primary relative">
+                        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary px-3 py-1">
+                            <span class="text-[10px] uppercase font-bold text-on-primary tracking-tighter">Najpogosteje
+                                izbrano</span>
+                        </div>
+                        <div class="flex-grow">
+                            <h4 class="font-headline text-on-surface mb-2">Oblikovanje<br>hiše</h4>
+                            <ul class="space-y-2 text-[0.65rem] text-on-surface-variant uppercase tracking-widest mb-10">
+                                <li>Idejna zasnova</li>
+                                <li>Tloris</li>
+                                <li>Razsvetljava</li>
+                                <li>Vizualizacije</li>
+                                <li>Izvedbena mapa</li>
+                            </ul>
+                        </div>
+                        <div class="mb-8">
+                            <div class="text-3xl font-headline text-primary">od 40 €<span class="text-sm">/m²</span></div>
+                        </div>
+                        <a href="kontakt.html" class="w-full py-4 bg-primary text-on-primary text-[0.7rem] font-label uppercase tracking-[0.2em] text-center hover:bg-primary-container transition-all duration-300">
+                            Pošljite povpraševanje
+                        </a>
+                    </div>
+                    <!-- Pricing Card 3 -->
+                    <div class="bg-[#141412] p-10 flex flex-col min-h-[460px]">
+                        <div class="flex-grow">
+                            <h4 class="font-headline text-on-surface mb-2">Javni<br>objekti</h4>
+                            <ul class="space-y-2 text-[0.65rem] text-on-surface-variant uppercase tracking-widest mb-10">
+                                <li>Unikatna idejna zasnova</li>
+                                <li>Tloris</li>
+                                <li>Razsvetljava</li>
+                                <li>Vizualizacije</li>
+                                <li>Izvedbena mapa</li>
+                            </ul>
+                        </div>
+                        <div class="mb-8">
+                            <div class="text-3xl font-headline text-primary">od 50 €<span class="text-sm">/m²</span></div>
+                        </div>
+                        <a href="kontakt.html" class="w-full py-4 border border-primary/40 text-primary text-[0.7rem] font-label uppercase tracking-[0.2em] text-center hover:bg-primary hover:text-on-primary transition-all duration-300">
+                            Pošljite povpraševanje
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section 5: CTA SECTION -->
+        <section class="bg-[#0D0D0B] py-32 px-6 md:px-12 2xl:px-[56px] text-center border-t border-outline-variant/30">
+            <div class="max-w-[1600px] mx-auto w-full">
+                <h2 class="text-4xl md:text-6xl font-headline text-on-surface mb-6" data-aos="fade-up" data-aos-delay="100">Naredimo vtis skupaj.</h2>
+                <p class="text-on-surface-variant font-body text-lg mb-12 opacity-80">Naročite se na brezplačni uvodni
+                    sestanek in odkrijte potencial vašega prostora.</p>
+                <a href="kontakt.html"
+                    class="bg-primary text-on-primary px-10 py-5 text-[0.75rem] uppercase tracking-[0.2em] font-label hover:bg-surface-tint transition-all duration-300 inline-flex items-center gap-4 mx-auto">
+                    Rezerviraj sestanek <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+
+
+
+    <!-- Footer -->
+
+
+
+
+
+    <!-- Footer -->
+    <footer
+        class="bg-[#0e0e0c] dark:bg-[#0e0e0c] w-full py-20 px-6 md:px-12 2xl:px-[56px] border-t-[0.5px] border-[#4d463b]">
+        <div class="flex flex-col md:flex-row justify-between items-start max-w-[1600px] mx-auto w-full">
+            <div>
+                <div class="text-2xl font-serif text-[#e2c28e] mb-8">TOMAŽ PAJNIČ</div>
+                <p class="text-[#7A7870] label-md max-w-xs leading-loose text-xs tracking-widest uppercase">
+                    Ustvarjamo prostore, ki dihajo z vami. <br /> Brezčasno oblikovanje za sodobno bivanje.
+                </p>
+            </div>
+            <div class="mt-12 md:mt-0 flex flex-col space-y-4">
+                <h4 class="label-md text-primary mb-2 text-xs tracking-widest uppercase">Povezave</h4>
+                <a class="text-[#7A7870] hover:text-[#e2c28e] transition-opacity label-md text-xs tracking-widest uppercase"
+                    href="index.html">Domov</a>
+                <a class="text-[#7A7870] hover:text-[#e2c28e] transition-opacity label-md text-xs tracking-widest uppercase"
+                    href="projekti.html">Projekti</a>
+                <a class="text-[#7A7870] hover:text-[#e2c28e] transition-opacity label-md text-xs tracking-widest uppercase"
+                    href="kontakt.html">Kontakt</a>
+            </div>
+            <div class="mt-12 md:mt-0">
+                <h4 class="label-md text-primary mb-6 text-xs tracking-widest uppercase">Kontakt</h4>
+                <div class="flex flex-col space-y-2">
+                    <p class="text-[#7A7870] label-md text-xs tracking-widest uppercase">Tomaž Pajnič sp<br>Smrjene 71,
+                        2145 Škofljica</p>
+                    <a href="mailto:tomaz@notranje-oblikovanje.si"
+                        class="text-[#7A7870] hover:text-[#e2c28e] transition-opacity label-md text-xs tracking-widest lowercase pt-2">tomaz@notranje-oblikovanje.si</a>
+                    <a href="tel:+38651254064"
+                        class="text-[#7A7870] hover:text-[#e2c28e] transition-opacity label-md text-xs tracking-widest uppercase">051
+                        254 064</a>
+                </div>
+                <div class="mt-16 text-[#7A7870] label-md text-[0.65rem] tracking-widest uppercase">
+                    © 2026 TOMAŽ PAJNIČ. ALL RIGHTS RESERVED.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script id="mobile-nav-script">
+        document.addEventListener("DOMContentLoaded", () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const icon = btn ? btn.querySelector('span') : null;
+            if (btn && menu && icon) {
+                btn.addEventListener('click', () => {
+                    menu.classList.toggle('hidden');
+                    menu.classList.toggle('flex');
+                    if (menu.classList.contains('hidden')) {
+                        icon.innerText = 'menu';
+                    } else {
+                        icon.innerText = 'close';
+                    }
+                });
+            }
+        });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
+
+
+</html>

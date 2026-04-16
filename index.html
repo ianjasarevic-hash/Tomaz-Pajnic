@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html class="dark" lang="sl">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Tomaž Pajnič | Notranje Oblikovanje</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "HomeAndConstructionBusiness",
+            "name": "Notranje Oblikovanje Tomaž Pajnič",
+            "image": "assets/images/owner/TomazPajnic.webp",
+            "url": "https://notranje-oblikovanje.si",
+            "telephone": "051 254 064",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Smrjene 71",
+                "addressLocality": "Škofljica",
+                "postalCode": "1291",
+                "addressCountry": "SI",
+                "addressRegion": "Slovenija"
+            },
+            "priceRange": "$$",
+            "sameAs": [
+                "https://www.facebook.com/Notranje-oblikovanjesi-278754072814812",
+                "https://www.instagram.com/notranjeoblikovanje/"
+            ]
+        }
+    </script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#ffdea8",
+                        "secondary-fixed": "#fcdfad",
+                        "surface-variant": "#353532",
+                        "secondary-fixed-dim": "#dec393",
+                        "tertiary-container": "#a29f96",
+                        "surface-container": "#20201d",
+                        "surface-container-highest": "#353532",
+                        "on-primary": "#402d06",
+                        "error-container": "#93000a",
+                        "inverse-surface": "#e5e2de",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed": "#271900",
+                        "on-secondary": "#3e2e0b",
+                        "on-primary-container": "#47330b",
+                        "surface-tint": "#e2c28e",
+                        "primary": "#e2c28e",
+                        "tertiary": "#cac6bd",
+                        "on-surface": "#e5e2de",
+                        "inverse-on-surface": "#31302e",
+                        "on-tertiary": "#31312a",
+                        "tertiary-fixed": "#e6e2d9",
+                        "outline-variant": "#4d463b",
+                        "tertiary-fixed-dim": "#cac6bd",
+                        "surface": "#141311",
+                        "on-background": "#e5e2de",
+                        "on-primary-fixed-variant": "#59431b",
+                        "surface-bright": "#3a3937",
+                        "surface-dim": "#141311",
+                        "on-tertiary-container": "#373630",
+                        "on-tertiary-fixed-variant": "#484740",
+                        "on-secondary-fixed-variant": "#57441f",
+                        "on-secondary-fixed": "#261900",
+                        "inverse-primary": "#735b30",
+                        "on-secondary-container": "#ccb283",
+                        "secondary": "#dec393",
+                        "primary-fixed-dim": "#e2c28e",
+                        "on-error": "#690005",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-low": "#1c1c19",
+                        "on-surface-variant": "#d0c5b6",
+                        "primary-container": "#b89b6a",
+                        "outline": "#998f82",
+                        "surface-container-high": "#2a2a28",
+                        "surface-container-lowest": "#0e0e0c",
+                        "secondary-container": "#57441f",
+                        "background": "#141311",
+                        "on-tertiary-fixed": "#1c1c16"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #141311;
+            color: #e5e2de;
+            -webkit-font-smoothing: antialiased;
+        }
+
+
+
+        .custom-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 2px;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+        }
+
+        /* Custom Video Player Styles */
+        .video-controls {
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .group:hover .video-controls {
+            opacity: 1;
+        }
+
+        input[type=range].video-seek {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+
+        input[type=range].video-seek::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: rgba(226, 194, 142, 0.2);
+            border-radius: 2px;
+        }
+
+        input[type=range].video-seek::-webkit-slider-thumb {
+            height: 12px;
+            width: 12px;
+            border-radius: 50%;
+            background: #e2c28e;
+            cursor: pointer;
+            -webkit-appearance: none;
+            margin-top: -4px;
+            box-shadow: 0 0 10px rgba(226, 194, 142, 0.4);
+        }
+
+        input[type=range].video-seek:focus {
+            outline: none;
+        }
+    </style>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link href="assets/css/animations.css" rel="stylesheet" />
+    <!-- GSAP & Lenis -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+</head>
+
+<body class="font-body selection:bg-primary selection:text-on-primary">
+
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="curtain-l"></div>
+        <div class="curtain-r"></div>
+        <div class="loader-content">
+            <div class="loader-logo">TOMAŽ PAJNIČ</div>
+        </div>
+    </div>
+
+    <!-- TopAppBar -->
+    <nav
+        class="fixed top-0 w-full z-50 h-20 bg-[#141311] border-b-[0.5px] border-[#4d463b] flex justify-between items-center px-6 md:px-12 2xl:px-[56px] transition-all duration-300">
+        <a href="index.html" class="text-xl font-serif tracking-widest text-[#e2c28e]">TOMAŽ PAJNIČ</a>
+        <div class="hidden md:flex items-center space-x-12">
+            <a class="text-[#e2c28e] border-b border-[#e2c28e] pb-1 hover:text-[#e2c28e] transition-colors duration-300 label-md text-xs tracking-widest uppercase"
+                href="index.html">Domov</a>
+            <a class="text-[#7A7870] hover:text-[#e2c28e] transition-colors duration-300 label-md text-xs tracking-widest uppercase"
+                href="projekti.html">Projekti</a>
+            <a class="text-[#7A7870] hover:text-[#e2c28e] transition-colors duration-300 label-md text-xs tracking-widest uppercase"
+                href="storitve.html">Storitve</a>
+            <a class="text-[#7A7870] hover:text-[#e2c28e] transition-colors duration-300 label-md text-xs tracking-widest uppercase"
+                href="o-meni.html">O meni</a>
+            <a class="text-[#7A7870] hover:text-[#e2c28e] transition-colors duration-300 label-md text-xs tracking-widest uppercase"
+                href="kontakt.html">Kontakt</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden text-[#e2c28e] flex items-center justify-center">
+            <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu Tray -->
+    <div id="mobile-menu"
+        class="fixed top-20 left-0 w-full h-screen bg-[#141311] z-40 hidden flex-col items-center pt-12 space-y-8 md:hidden">
+        <a class="text-[#e2c28e] border-b border-[#e2c28e] pb-1 text-lg tracking-widest duration-300 label-md uppercase"
+            href="index.html">Domov</a>
+        <a class="text-[#7A7870] text-lg tracking-widest duration-300 label-md uppercase"
+            href="projekti.html">Projekti</a>
+        <a class="text-[#7A7870] text-lg tracking-widest duration-300 label-md uppercase"
+            href="storitve.html">Storitve</a>
+        <a class="text-[#7A7870] text-lg tracking-widest duration-300 label-md uppercase" href="o-meni.html">O meni</a>
+        <a class="text-[#7A7870] text-lg tracking-widest duration-300 label-md uppercase"
+            href="kontakt.html">Kontakt</a>
+    </div>
+
+    <!-- Hero Slider -->
+    <section class="relative h-screen w-full overflow-hidden" id="hero-slider">
+
+
+        <!-- Slides Container -->
+        <div class="relative w-full h-full" id="slides-container">
+
+            <!-- Slide 1 -->
+            <div class="absolute inset-0 z-0 slide-item transition-opacity duration-1000" style="opacity: 1;">
+                <img class="absolute inset-0 z-0 w-full h-full object-cover" src="assets/images/slider/1.jpg" />
+                <div class="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent z-10">
+                </div>
+                <div
+                    class="relative z-20 h-full flex flex-col justify-center px-6 md:px-12 2xl:px-[56px] pt-20 max-w-[1600px] mx-auto w-full">
+                    <div class="flex items-center gap-4 mb-6 animation-content transition-all duration-1000"
+                        style="opacity: 1; transform: translateY(0);">
+                        <div class="w-8 h-[1px] bg-primary"></div>
+                        <span class="font-label text-[0.75rem] tracking-[0.18em] uppercase text-primary">VRHUNSKO
+                            OBLIKOVANJE</span>
+                    </div>
+                    <h1 class="font-headline text-[3rem] md:text-[4.5rem] leading-[1.1] max-w-4xl text-on-surface mb-12 slide-title transition-all duration-1000 parallax-text"
+                        style="opacity: 1; transform: translateY(0);" data-aos="fade-up">
+                        Arhitektura miru v<br />vašem domu.
+                    </h1>
+                    <a href="projekti/stanovanje-pod-gradom.html" data-magnetic
+                        class="inline-flex items-center gap-4 text-primary uppercase text-[0.75rem] tracking-widest hover:text-on-surface transition-colors w-max animation-content transition-all duration-1000"
+                        style="opacity: 1; transform: translateY(0);">
+                        Ogled projekta <span class="material-symbols-outlined">arrow_right_alt</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="absolute inset-0 z-0 slide-item pointer-events-none transition-opacity duration-1000"
+                style="opacity: 0;">
+                <img class="absolute inset-0 z-0 w-full h-full object-cover object-center"
+                    src="assets/images/slider/2.jpg" />
+                <div class="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent z-10">
+                </div>
+                <div
+                    class="relative z-20 h-full flex flex-col justify-center px-6 md:px-12 2xl:px-[56px] pt-20 max-w-[1600px] mx-auto w-full">
+                    <div class="flex items-center gap-4 mb-6 animation-content transition-all duration-1000"
+                        style="opacity: 0; transform: translateY(2rem);">
+                        <div class="w-8 h-[1px] bg-primary"></div>
+                        <span class="font-label text-[0.75rem] tracking-[0.18em] uppercase text-primary">SODOBNA
+                            PREFINJENOST</span>
+                    </div>
+                    <h1 class="font-headline text-[3rem] md:text-[4.5rem] leading-[1.1] max-w-4xl text-on-surface mb-12 slide-title transition-all duration-1000 parallax-text"
+                        style="opacity: 0; transform: translateY(2rem);" data-aos="fade-up">
+                        Igra linij v<br />popolni harmoniji.
+                    </h1>
+                    <a href="projekti/igra-linij.html" data-magnetic
+                        class="inline-flex items-center gap-4 text-primary uppercase text-[0.75rem] tracking-widest hover:text-on-surface transition-colors w-max animation-content transition-all duration-1000"
+                        style="opacity: 0; transform: translateY(2rem);">
+                        Ogled projekta <span class="material-symbols-outlined">arrow_right_alt</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="absolute inset-0 z-0 slide-item pointer-events-none transition-opacity duration-1000"
+                style="opacity: 0;">
+                <img class="absolute inset-0 z-0 w-full h-full object-cover object-center"
+                    src="assets/images/slider/3.jpg" />
+                <div class="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent z-10">
+                </div>
+                <div
+                    class="relative z-20 h-full flex flex-col justify-center px-6 md:px-12 2xl:px-[56px] pt-20 max-w-[1600px] mx-auto w-full">
+                    <div class="flex items-center gap-4 mb-6 animation-content transition-all duration-1000"
+                        style="opacity: 0; transform: translateY(2rem);">
+                        <div class="w-8 h-[1px] bg-primary"></div>
+                        <span class="font-label text-[0.75rem] tracking-[0.18em] uppercase text-primary">INDUSTRIJSKI
+                            NAVDIH</span>
+                    </div>
+                    <h1 class="font-headline text-[3rem] md:text-[4.5rem] leading-[1.1] max-w-4xl text-on-surface mb-12 slide-title transition-all duration-1000 parallax-text"
+                        style="opacity: 0; transform: translateY(2rem);" data-aos="fade-up">
+                        Unikaten značaj za<br />urbano bivanje.
+                    </h1>
+                    <a href="projekti/industrijska-oaza.html" data-magnetic
+                        class="inline-flex items-center gap-4 text-primary uppercase text-[0.75rem] tracking-widest hover:text-on-surface transition-colors w-max animation-content transition-all duration-1000"
+                        style="opacity: 0; transform: translateY(2rem);">
+                        Ogled projekta <span class="material-symbols-outlined">arrow_right_alt</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Controls -->
+        <div class="absolute bottom-16 left-6 md:left-[56px] flex items-end gap-12 z-50">
+            <div class="font-serif text-xl text-primary" id="slide-counter">01 / 03</div>
+            <div class="flex gap-4">
+                <button id="prev-slide"
+                    class="w-12 h-12 flex items-center justify-center border-[0.5px] border-outline-variant text-on-surface hover:border-primary hover:text-primary transition-colors bg-background/50 backdrop-blur-sm">
+                    <span class="material-symbols-outlined">west</span>
+                </button>
+                <button id="next-slide"
+                    class="w-12 h-12 flex items-center justify-center border-[0.5px] border-outline-variant text-on-surface hover:border-primary hover:text-primary transition-colors bg-background/50 backdrop-blur-sm">
+                    <span class="material-symbols-outlined">east</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Progress Indicator -->
+        <div class="absolute bottom-16 right-6 md:right-[56px] flex gap-3 z-50" id="slide-dots">
+            <div class="w-2 h-2 bg-primary cursor-pointer slide-dot" data-index="0"></div>
+            <div class="w-2 h-2 bg-outline-variant cursor-pointer slide-dot" data-index="1"></div>
+            <div class="w-2 h-2 bg-outline-variant cursor-pointer slide-dot" data-index="2"></div>
+        </div>
+    </section>
+
+    <!-- Intro Split -->
+    <section class="py-24 px-6 md:px-12 2xl:px-[56px] bg-surface-container-lowest">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 max-w-[1600px] mx-auto w-full">
+            <div class="flex flex-col justify-center">
+                <span class="font-label text-[0.75rem] tracking-[0.18em] uppercase text-primary mb-6">O
+                    oblikovalcu</span>
+                <h2 class="font-headline text-[2.5rem] leading-tight mb-8 reveal-text">
+                    Izognite se pogostim<br />in dragim napakam.
+                </h2>
+                <div class="border-l-[2px] border-primary pl-8 mt-4">
+                    <p class="font-serif italic text-xl text-on-surface-variant leading-relaxed">
+                        "Notranji oblikovalec olajša vaš vsakdan! Z vami sem na vseh korakih od ideje do izvedbe.
+                        Zaupajte večletnim izkušnjam pri iskanju rešitev."
+                    </p>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-2">
+                <div class="bg-surface p-12 border-[0.5px] border-outline-variant flex flex-col justify-center">
+                    <div class="text-4xl font-headline text-primary mb-2">15+</div>
+                    <div class="font-label text-[0.7rem] tracking-widest uppercase text-muted-text">Let Izkušenj</div>
+                </div>
+                <div class="bg-surface p-12 border-[0.5px] border-outline-variant flex flex-col justify-center">
+                    <div class="text-4xl font-headline text-primary mb-2">100+</div>
+                    <div class="font-label text-[0.7rem] tracking-widest uppercase text-muted-text">Projektov</div>
+                </div>
+                <div class="bg-surface p-12 border-[0.5px] border-outline-variant flex flex-col justify-center"
+                    data-aos="fade-up">
+                    <div class="text-4xl font-headline text-primary mb-2">3D</div>
+                    <div class="font-label text-[0.7rem] tracking-widest uppercase text-muted-text">Vizualizacija</div>
+                </div>
+                <a class="bg-primary p-12 flex flex-col justify-center items-center hover:bg-primary-container transition-colors group"
+                    href="kontakt.html">
+                    <span data-magnetic
+                        class="text-on-primary font-label text-[0.8rem] tracking-widest uppercase font-bold text-center">Brezplačni
+                        sestanek →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Benefits -->
+    <section class="py-24 px-6 md:px-12 2xl:px-[56px] bg-surface">
+        <div class="max-w-[1600px] mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-12">
+            <!-- Benefit 1 -->
+            <div class="flex flex-col items-center text-center p-8 border-[0.5px] border-outline-variant hover:border-primary transition-colors group"
+                data-aos="fade-up" data-aos-delay="100">
+                <div
+                    class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center mb-8 group-hover:bg-primary/10 transition-colors">
+                    <span class="material-symbols-outlined text-primary text-3xl">directions</span>
+                </div>
+                <h3 class="font-headline text-xl mb-6">Izognite se dragim napakam</h3>
+                <p class="font-body text-sm text-on-surface-variant leading-relaxed max-w-xs">
+                    Zaupajte večletnim izkušnjam in se izognite dragim napakam, ki so pogoste pri prenovi ali gradnji.
+                </p>
+            </div>
+            <!-- Benefit 2 -->
+            <div class="flex flex-col items-center text-center p-8 border-[0.5px] border-outline-variant hover:border-primary transition-colors group"
+                data-aos="fade-up" data-aos-delay="200">
+                <div
+                    class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center mb-8 group-hover:bg-primary/10 transition-colors">
+                    <span class="material-symbols-outlined text-primary text-3xl">architecture</span>
+                </div>
+                <h3 class="font-headline text-xl mb-6">Skupaj od ideje do izvedbe</h3>
+                <p class="font-body text-sm text-on-surface-variant leading-relaxed max-w-xs">
+                    Notranji oblikovalec olajša vaš vsakdan. Z vami sem na vseh korakih, od prve zamisli do končne
+                    realizacije.
+                </p>
+            </div>
+            <!-- Benefit 3 -->
+            <div class="flex flex-col items-center text-center p-8 border-[0.5px] border-outline-variant hover:border-primary transition-colors group"
+                data-aos="fade-up" data-aos-delay="300">
+                <div
+                    class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center mb-8 group-hover:bg-primary/10 transition-colors">
+                    <span class="material-symbols-outlined text-primary text-3xl">home</span>
+                </div>
+                <h3 class="font-headline text-xl mb-6">Dom, na katerega boste ponosni</h3>
+                <p class="font-body text-sm text-on-surface-variant leading-relaxed max-w-xs">
+                    Ustvarimo unikatno zasnovan prostor, ki bo očaral vas in vaše bližnje ter izboljšal kakovost
+                    bivanja.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Grid -->
+    <section class="bg-surface py-24">
+        <div class="px-6 md:px-12 2xl:px-[56px] flex justify-between items-end mb-12 max-w-[1600px] mx-auto w-full">
+            <div>
+                <span
+                    class="font-label text-[0.75rem] tracking-[0.18em] uppercase text-primary mb-4 block">Portfolio</span>
+                <h2 class="font-headline text-3xl reveal-text">Izbrani projekti</h2>
+            </div>
+            <a class="font-label text-[0.75rem] tracking-[0.18em] uppercase text-primary border-b border-primary pb-1 hover:text-on-surface hover:border-on-surface transition-colors"
+                href="projekti.html">Vsi projekti →</a>
+        </div>
+        <!-- Horizontal Scroll Wrapper -->
+        <div class="horizontal-scroll-section px-6 md:px-12 2xl:px-[56px] max-w-[1600px] mx-auto w-full">
+            <div class="horizontal-container gap-8" id="horizontal-projects">
+                <!-- Project 1 -->
+                <a href="projekti/stanovanje-pod-gradom.html"
+                    class="horizontal-item group relative overflow-hidden block project-card-premium">
+                    <div class="aspect-[4/5] overflow-hidden">
+                        <img alt="Stanovanje Pod Gradom"
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                            src="assets/images/slider/1.jpg" />
+                    </div>
+                    <div
+                        class="bg-surface-container-low p-6 flex justify-between items-center border-[0.5px] border-outline-variant border-t-0">
+                        <div>
+                            <h3 class="font-headline text-xl">Stanovanje Pod Gradom</h3>
+                            <p class="font-label text-[0.65rem] tracking-widest uppercase text-tertiary">Ljubljana</p>
+                        </div>
+                        <span
+                            class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform">arrow_right_alt</span>
+                    </div>
+                </a>
+                <!-- Project 2 -->
+                <a href="projekti/igra-linij.html" class="horizontal-item group relative overflow-hidden block project-card-premium">
+                    <div class="aspect-[4/5] overflow-hidden">
+                        <img alt="Stanovanje Igra Linij"
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                            src="assets/images/slider/2.jpg" />
+                    </div>
+                    <div
+                        class="bg-surface-container-low p-6 flex justify-between items-center border-[0.5px] border-outline-variant border-t-0">
+                        <div>
+                            <h3 class="font-headline text-xl">Stanovanje Igra Linij</h3>
+                            <p class="font-label text-[0.65rem] tracking-widest uppercase text-tertiary">Ljubljana - Črnuče
+                            </p>
+                        </div>
+                        <span
+                            class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform">arrow_right_alt</span>
+                    </div>
+                </a>
+                <!-- Project 3 -->
+                <a href="projekti/industrijska-oaza.html"
+                    class="horizontal-item group relative overflow-hidden block project-card-premium">
+                    <div class="aspect-[4/5] overflow-hidden">
+                        <img alt="Industrijska Oaza"
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                            src="assets/images/slider/3.jpg" />
+                    </div>
+                    <div
+                        class="bg-surface-container-low p-6 flex justify-between items-center border-[0.5px] border-outline-variant border-t-0">
+                        <div>
+                            <h3 class="font-headline text-xl">Industrijska Oaza</h3>
+                            <p class="font-label text-[0.65rem] tracking-widest uppercase text-tertiary">Ljubljana - center
+                            </p>
+                        </div>
+                        <span
+                            class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform">arrow_right_alt</span>
+                    </div>
+                </a>
+                <!-- View All Link (Horizontal) -->
+                <div class="horizontal-item flex items-center justify-center bg-surface-container-low border-[0.5px] border-outline-variant">
+                    <a href="projekti.html" class="text-primary uppercase tracking-widest text-sm hover:scale-110 transition-transform">Vsi projekti →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Owner Philosophy Integration -->
+    <section class="py-24 px-6 md:px-12 2xl:px-[56px] border-t border-outline-variant/30">
+        <div class="max-w-[1600px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+            <div class="aspect-[4/5] overflow-hidden border-[0.5px] border-outline-variant group" data-aos="fade-right">
+                <img src="assets/images/owner/TomazPajnic.webp"
+                    class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+            </div>
+            <div class="flex flex-col justify-center">
+                <div class="flex items-center gap-4 mb-6">
+                    <span class="font-label text-[0.75rem] tracking-[0.18em] uppercase text-primary">Tomaž Pajnič</span>
+                    <div class="h-[0.5px] w-24 bg-primary"></div>
+                </div>
+                <h2 class="font-headline text-[2.5rem] md:text-[3rem] leading-[1.1] text-on-surface mb-8"
+                    data-aos="fade-up">
+                    Oblikovalec, ki razume vaš prostor.</h2>
+                <p class="font-body text-on-surface-variant leading-relaxed text-sm mb-6 max-w-lg">
+                    Moja strast do notranjega oblikovanja se je razvila iz občudovanja arhitekture and vpliva
+                    premišljeno zasnovanih prostorov na naše bivanje. Verjamem, da si vsak prostor zasluži unikatno
+                    vizijo, ki upošteva preteklost, a se prilagodi prihodnosti.
+                </p>
+                <p class="font-body text-on-surface-variant leading-relaxed text-sm mb-12 max-w-lg">
+                    Združujem inovativne pristope s tradicionalnimi vrednotami estetike and funkcionalnosti, kjer je
+                    pozornost namenjena vsakemu, še tako majhnemu detajlu. Cilj oblikovanja ni zgolj vizualna
+                    dovršenost, ampak predvsem izboljšanje kakovosti vsakdana.
+                </p>
+                <div class="grid grid-cols-2 gap-8 pt-10 border-t border-outline-variant">
+                    <div>
+                        <div class="text-3xl font-headline text-primary mb-2">2005</div>
+                        <div class="font-label text-[0.65rem] tracking-widest uppercase text-tertiary">Leto začetka
+                        </div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-headline text-primary mb-2">150+</div>
+                        <div class="font-label text-[0.65rem] tracking-widest uppercase text-tertiary">Dokončanih
+                            projektov</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Presentation -->
+    <section class="py-24 bg-[#0D0D0B] border-t border-outline-variant/30">
+        <div class="max-w-[1200px] mx-auto px-6 md:px-12 text-center">
+            <span class="font-label text-[0.75rem] tracking-[0.18em] uppercase text-primary mb-6 block">Video
+                predstavitev</span>
+            <h2 class="font-headline text-[2.5rem] mb-12" data-aos="fade-up">Zgodba o brezčasnem dizajnu</h2>
+            <div class="aspect-video relative overflow-hidden border-[0.5px] border-outline-variant group shadow-2xl bg-black"
+                data-aos="zoom-in" data-aos-duration="1200">
+                <video id="luxury-video" class="w-full h-full object-cover transition-all duration-1000" playsinline>
+                    <source src="assets/video/videoplayback.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <!-- Video Overlay / Play Button -->
+                <div id="video-overlay"
+                    class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/40 transition-all duration-500 cursor-pointer">
+                    <div
+                        class="w-20 h-20 rounded-full border border-primary/30 flex items-center justify-center bg-surface-container-high/40 backdrop-blur-md group-hover:scale-110 transition-transform duration-500">
+                        <span id="play-icon" class="material-symbols-outlined text-primary text-5xl">play_arrow</span>
+                    </div>
+                </div>
+
+                <!-- Custom Controls -->
+                <div
+                    class="video-controls absolute bottom-0 left-0 right-0 p-6 flex flex-col gap-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                    <div class="flex items-center gap-4">
+                        <input type="range" class="video-seek" id="video-seek" value="0" min="0" max="100">
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-6">
+                            <button id="video-play-toggle" class="text-on-surface hover:text-primary transition-colors">
+                                <span class="material-symbols-outlined">play_arrow</span>
+                            </button>
+                            <div class="font-label text-[0.65rem] tracking-[0.2em] text-on-surface-variant">
+                                <span id="current-time">00:00</span> / <span id="duration">00:00</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <button id="video-mute" class="text-on-surface hover:text-primary transition-colors">
+                                <span class="material-symbols-outlined">volume_up</span>
+                            </button>
+                            <button id="video-fullscreen" class="text-on-surface hover:text-primary transition-colors">
+                                <span class="material-symbols-outlined">fullscreen</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Steps -->
+    <section class="py-24 px-6 md:px-12 2xl:px-[56px] bg-surface-container-lowest">
+        <span class="font-label text-[0.75rem] tracking-[0.18em] uppercase text-primary mb-6 block">Kako delamo</span>
+        <h2 class="font-headline text-[2.5rem] mb-16" data-aos="fade-up" data-aos-delay="100">Pot do vašega sanjskega
+            doma</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 max-w-[1600px] mx-auto w-full">
+            <div class="p-10 bg-surface border-l-[2px] border-primary group hover:bg-surface-container transition-colors"
+                data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+                <div class="text-6xl font-headline text-primary opacity-20 mb-8 group-hover:opacity-40 transition-opacity"
+                    data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+                    01</div>
+                <h4 class="font-headline text-xl mb-4">Spoznavni sestanek</h4>
+                <p class="text-tertiary text-sm leading-relaxed">Predstavite mi vaše želje in vizijo. Dogovorimo se za
+                    ogled in meritve prostorov.</p>
+            </div>
+            <div class="p-10 bg-surface border-l-[2px] border-primary group hover:bg-surface-container transition-colors"
+                data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+                <div class="text-6xl font-headline text-primary opacity-20 mb-8 group-hover:opacity-40 transition-opacity"
+                    data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+                    02</div>
+                <h4 class="font-headline text-xl mb-4">Izbor stila & mat.</h4>
+                <p class="text-tertiary text-sm leading-relaxed">Na podlagi želja pripravim usmeritev v slog in barve,
+                    kar služi kot osnova.</p>
+            </div>
+            <div class="p-10 bg-surface border-l-[2px] border-primary group hover:bg-surface-container transition-colors"
+                data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+                <div class="text-6xl font-headline text-primary opacity-20 mb-8 group-hover:opacity-40 transition-opacity"
+                    data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+                    03</div>
+                <h4 class="font-headline text-xl mb-4">Tloris</h4>
+                <p class="text-tertiary text-sm leading-relaxed">Pripravim vam več možnosti razporeditve prostora,
+                    katere izpopolnimo.</p>
+            </div>
+            <div class="p-10 bg-surface border-l-[2px] border-primary group hover:bg-surface-container transition-colors mt-2"
+                data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+                <div class="text-6xl font-headline text-primary opacity-20 mb-8 group-hover:opacity-40 transition-opacity"
+                    data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+                    04</div>
+                <h4 class="font-headline text-xl mb-4">Razsvetljava</h4>
+                <p class="text-tertiary text-sm leading-relaxed">Načrtovanje osvetlitve, ki drastično vpliva na
+                    razpoloženje v prostoru.</p>
+            </div>
+            <div class="p-10 bg-surface border-l-[2px] border-primary group hover:bg-surface-container transition-colors mt-2"
+                data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+                <div class="text-6xl font-headline text-primary opacity-20 mb-8 group-hover:opacity-40 transition-opacity"
+                    data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+                    05</div>
+                <h4 class="font-headline text-xl mb-4">3D Vizualizacija</h4>
+                <p class="text-tertiary text-sm leading-relaxed">Prikaz izbranih kosov v 3D tehnologiji, da si interier
+                    lažje predstavljate.</p>
+            </div>
+            <div class="p-10 bg-surface border-l-[2px] border-primary group hover:bg-surface-container transition-colors mt-2"
+                data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+                <div class="text-6xl font-headline text-primary opacity-20 mb-8 group-hover:opacity-40 transition-opacity"
+                    data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+                    06</div>
+                <h4 class="font-headline text-xl mb-4">Izvedbena mapa</h4>
+                <p class="text-tertiary text-sm leading-relaxed">Predaja končne dokumentacije z vsemi podatki za izvedbo
+                    del.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-24 bg-surface px-6 md:px-12 2xl:px-[56px]">
+        <div class="text-center mb-16 max-w-[1600px] mx-auto w-full">
+            <span
+                class="font-label text-[0.75rem] tracking-[0.18em] uppercase text-primary mb-4 block text-center">Mnenja
+                strank</span>
+            <h2 class="font-headline text-3xl" data-aos="fade-up" data-aos-delay="100">Povedali so o nas</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[1600px] mx-auto w-full">
+            <div class="bg-[#1C1C19] p-12 relative">
+                <span class="material-symbols-outlined text-primary text-5xl absolute top-8 left-8 opacity-20"
+                    style="font-variation-settings: 'FILL' 1;">format_quote</span>
+                <p class="font-serif italic text-on-surface-variant leading-relaxed mb-8 pt-6">
+                    "Tomaž je dal v svoje delo srce in to se odraža tako v funkcionalnosti kot v estetiki. Navdušena sem
+                    nad profesionalnim in potrpežljivim vodenjem."
+                </p>
+                <div class="font-label text-[0.7rem] tracking-widest uppercase text-primary">— Nina Berlič</div>
+            </div>
+            <div class="bg-[#1C1C19] p-12 relative">
+                <span class="material-symbols-outlined text-primary text-5xl absolute top-8 left-8 opacity-20"
+                    style="font-variation-settings: 'FILL' 1;">format_quote</span>
+                <p class="font-serif italic text-on-surface-variant leading-relaxed mb-8 pt-6">
+                    "Svetoval nama je pri izbiri pravih materialov in postavitvi elementov... se je njegov nasvet
+                    izkazal za pravo izbiro."
+                </p>
+                <div class="font-label text-[0.7rem] tracking-widest uppercase text-primary">— Eva Bec</div>
+            </div>
+            <div class="bg-[#1C1C19] p-12 relative">
+                <span class="material-symbols-outlined text-primary text-5xl absolute top-8 left-8 opacity-20"
+                    style="font-variation-settings: 'FILL' 1;">format_quote</span>
+                <p class="font-serif italic text-on-surface-variant leading-relaxed mb-8 pt-6">
+                    "Tomaž je zelo profesionalen, prepozna in prisluhne željam stranke. Predlagal nam je zanimive in
+                    praktične rešitve."
+                </p>
+                <div class="font-label text-[0.7rem] tracking-widest uppercase text-primary">— Tadeja Petrič</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Summary -->
+    <section class="py-24 px-6 md:px-12 2xl:px-[56px] bg-[#141311] border-t border-outline-variant/30">
+        <div class="max-w-[1600px] mx-auto w-full">
+            <div class="text-center mb-16">
+                <span
+                    class="font-label text-[0.75rem] tracking-[0.18em] uppercase text-primary mb-4 block">Investicija</span>
+                <h2 class="font-headline text-[2.5rem] mb-4" data-aos="fade-up">Transparentne cene</h2>
+                <p class="text-tertiary text-sm max-w-lg mx-auto">Okvirne cene oblikovanja glede na vrsto objekta in
+                    obseg del.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+                <!-- Apartment -->
+                <div class="bg-surface-container-low p-10 border-[0.5px] border-outline-variant transition-all hover:border-primary group flex flex-col"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex-grow">
+                        <h4 class="font-headline text-xl mb-4">Oblikovanje stanovanja</h4>
+                        <div class="text-4xl font-headline text-primary mb-6"><span
+                                class="text-xs font-label uppercase tracking-widest text-[#7A7870]">od</span> 45€ <span
+                                class="text-sm text-[#7A7870]">/ m²</span></div>
+                        <ul class="space-y-3 text-[0.65rem] text-tertiary mb-12 uppercase tracking-[0.15em] leading-relaxed">
+                            <li class="flex items-center gap-2">Idejna zasnova</li>
+                            <li class="flex items-center gap-2">Tloris</li>
+                            <li class="flex items-center gap-2">Razsvetljava</li>
+                            <li class="flex items-center gap-2">Vizualizacije</li>
+                            <li class="flex items-center gap-2">Izvedbena mapa</li>
+                        </ul>
+                    </div>
+                    <a href="kontakt.html" class="w-full py-4 border border-primary/40 text-primary text-[0.7rem] font-label uppercase tracking-[0.2em] text-center hover:bg-primary hover:text-on-primary transition-all duration-300">
+                        Pošljite povpraševanje
+                    </a>
+                </div>
+                <!-- House -->
+                <div class="bg-surface-container-low p-10 border-[0.5px] border-outline-variant transition-all hover:border-primary group flex flex-col"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex-grow">
+                        <h4 class="font-headline text-xl mb-4">Oblikovanje hiše</h4>
+                        <div class="text-4xl font-headline text-primary mb-6"><span
+                                class="text-xs font-label uppercase tracking-widest text-[#7A7870]">od</span> 40€ <span
+                                class="text-sm text-[#7A7870]">/ m²</span></div>
+                        <ul class="space-y-3 text-[0.65rem] text-tertiary mb-12 uppercase tracking-[0.15em] leading-relaxed">
+                            <li class="flex items-center gap-2">Idejna zasnova</li>
+                            <li class="flex items-center gap-2">Tloris</li>
+                            <li class="flex items-center gap-2">Razsvetljava</li>
+                            <li class="flex items-center gap-2">Vizualizacije</li>
+                            <li class="flex items-center gap-2">Izvedbena mapa</li>
+                        </ul>
+                    </div>
+                    <a href="kontakt.html" class="w-full py-4 border border-primary/40 text-primary text-[0.7rem] font-label uppercase tracking-[0.2em] text-center hover:bg-primary hover:text-on-primary transition-all duration-300">
+                        Pošljite povpraševanje
+                    </a>
+                </div>
+                <!-- Public -->
+                <div class="bg-surface-container-low p-10 border-[0.5px] border-outline-variant transition-all hover:border-primary group flex flex-col"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex-grow">
+                        <h4 class="font-headline text-xl mb-4">Javni objekti</h4>
+                        <div class="text-4xl font-headline text-primary mb-6"><span
+                                class="text-xs font-label uppercase tracking-widest text-[#7A7870]">od</span> 50€ <span
+                                class="text-sm text-[#7A7870]">/ m²</span></div>
+                        <ul class="space-y-3 text-[0.65rem] text-tertiary mb-12 uppercase tracking-[0.15em] leading-relaxed">
+                            <li class="flex items-center gap-2">Unikatna idejna zasnova</li>
+                            <li class="flex items-center gap-2">Tloris</li>
+                            <li class="flex items-center gap-2">Razsvetljava</li>
+                            <li class="flex items-center gap-2">Vizualizacije</li>
+                            <li class="flex items-center gap-2">Izvedbena mapa</li>
+                        </ul>
+                    </div>
+                    <a href="kontakt.html" class="w-full py-4 border border-primary/40 text-primary text-[0.7rem] font-label uppercase tracking-[0.2em] text-center hover:bg-primary hover:text-on-primary transition-all duration-300">
+                        Pošljite povpraševanje
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA Banner -->
+    <section class="py-32 bg-surface-container-lowest border-y-[0.5px] border-outline-variant">
+        <div class="max-w-4xl mx-auto text-center px-6 md:px-12 2xl:px-[56px]">
+            <h2 class="font-headline text-[3rem] md:text-[4rem] mb-6" data-aos="fade-up" data-aos-delay="100">Začnimo
+                skupaj.</h2>
+            <p class="text-tertiary mb-12 max-w-2xl mx-auto">Za pripravo informativne ponudbe prosim pripravite
+                naslednje podatke:</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 text-left max-w-2xl mx-auto mb-16 font-label text-[0.65rem] uppercase tracking-widest text-[#7A7870]"
+                data-aos="fade-up">
+                <div class="flex items-center gap-4 border-b border-outline-variant/20 pb-4">
+                    <span class="text-primary font-headline text-xl">01</span> Vrsta objekta (hiša/stanovanje)
+                </div>
+                <div class="flex items-center gap-4 border-b border-outline-variant/20 pb-4">
+                    <span class="text-primary font-headline text-xl">02</span> Kvadratura prostorov
+                </div>
+                <div class="flex items-center gap-4 border-b border-outline-variant/20 pb-4">
+                    <span class="text-primary font-headline text-xl">03</span> Kratek opis vaših želja
+                </div>
+                <div class="flex items-center gap-4 border-b border-outline-variant/20 pb-4">
+                    <span class="text-primary font-headline text-xl">04</span> Lokacija objekta
+                </div>
+                <div class="flex items-center gap-4 border-b border-outline-variant/20 pb-4">
+                    <span class="text-primary font-headline text-xl">05</span> Vaša telefonska številka
+                </div>
+            </div>
+
+            <div class="w-[60px] h-[1px] bg-primary mx-auto mb-12"></div>
+            <a href="kontakt.html"
+                class="inline-block bg-primary text-on-primary px-12 py-5 font-label text-[0.8rem] tracking-[0.2em] uppercase font-bold hover:bg-primary-container transition-all active:scale-95">
+                Pošljite povpraševanje →
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0e0e0c] w-full py-20 px-6 md:px-12 2xl:px-[56px] border-t-[0.5px] border-[#4d463b]">
+        <div class="flex flex-col md:flex-row justify-between items-start max-w-[1600px] mx-auto w-full">
+            <div>
+                <div class="text-2xl font-serif text-[#e2c28e] mb-8">TOMAŽ PAJNIČ</div>
+                <p class="text-[#7A7870] label-md max-w-xs leading-loose text-xs tracking-widest uppercase">
+                    Ustvarjamo prostore, ki dihajo z vami. <br /> Brezčasno oblikovanje za sodobno bivanje.
+                </p>
+            </div>
+            <div class="mt-12 md:mt-0 flex flex-col space-y-4">
+                <h4 class="label-md text-primary mb-2 text-xs tracking-widest uppercase">Povezave</h4>
+                <a class="text-[#7A7870] hover:text-[#e2c28e] transition-opacity label-md text-xs tracking-widest uppercase"
+                    href="index.html">Domov</a>
+                <a class="text-[#7A7870] hover:text-[#e2c28e] transition-opacity label-md text-xs tracking-widest uppercase"
+                    href="projekti.html">Projekti</a>
+                <a class="text-[#7A7870] hover:text-[#e2c28e] transition-opacity label-md text-xs tracking-widest uppercase"
+                    href="kontakt.html">Kontakt</a>
+            </div>
+            <div class="mt-12 md:mt-0">
+                <h4 class="label-md text-primary mb-6 text-xs tracking-widest uppercase">Kontakt</h4>
+                <div class="flex flex-col space-y-2">
+                    <p class="text-[#7A7870] label-md text-xs tracking-widest uppercase">Tomaž Pajnič sp<br>Smrjene 71,
+                        2145 Škofljica</p>
+                    <a href="mailto:tomaz@notranje-oblikovanje.si"
+                        class="text-[#7A7870] hover:text-[#e2c28e] transition-opacity label-md text-xs tracking-widest lowercase pt-2">tomaz@notranje-oblikovanje.si</a>
+                    <a href="tel:+38651254064"
+                        class="text-[#7A7870] hover:text-[#e2c28e] transition-opacity label-md text-xs tracking-widest uppercase">051
+                        254 064</a>
+                </div>
+                <div class="flex gap-6 mt-8">
+                    <a href="https://www.facebook.com/Notranje-oblikovanjesi-278754072814812" target="_blank"
+                        class="text-[#7A7870] hover:text-primary transition-colors">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/notranjeoblikovanje/" target="_blank"
+                        class="text-[#7A7870] hover:text-primary transition-colors">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="mt-16 text-[#7A7870] label-md text-[0.65rem] tracking-widest uppercase">
+                    © 2026 TOMAŽ PAJNIČ. ALL RIGHTS RESERVED.
+                </div>
+            </div>
+        </div>
+        <div class="w-full text-center mt-8 text-[#1a1a18] font-label text-[0.6rem] tracking-[0.2em] uppercase">
+            Design By <a href="https://buraqwebservice.com/" target="_blank" rel="noopener noreferrer"
+                class="hover:text-[#2e2e2a] transition-colors">Buraq Web Service</a>
+        </div>
+    </footer>
+
+    <script id="mobile-nav-script">
+        document.addEventListener("DOMContentLoaded", () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const icon = btn ? btn.querySelector('span') : null;
+            if (btn && menu && icon) {
+                btn.addEventListener('click', () => {
+                    menu.classList.toggle('hidden');
+                    menu.classList.toggle('flex');
+                    if (menu.classList.contains('hidden')) { icon.innerText = 'menu'; } else { icon.innerText = 'close'; }
+                });
+            }
+        });
+    </script>
+    <script id="hero-slider-script">
+        document.addEventListener("DOMContentLoaded", () => {
+            const slides = document.querySelectorAll('.slide-item');
+            const dots = document.querySelectorAll('.slide-dot');
+            const counter = document.getElementById('slide-counter');
+            const titles = document.querySelectorAll('.slide-title');
+            const animations = document.querySelectorAll('.animation-content');
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+            let autoInterval;
+
+            if (totalSlides === 0) return;
+
+            function renderSlide(index) {
+                slides.forEach((slide, i) => {
+                    const slideTitles = slide.querySelectorAll('.slide-title');
+                    const slideAnims = slide.querySelectorAll('.animation-content');
+
+                    if (i === index) {
+                        slide.classList.remove('pointer-events-none');
+                        slide.style.opacity = '1';
+
+                        slideTitles.forEach(t => {
+                            t.style.opacity = '1';
+                            t.style.transform = 'translateY(0)';
+                        });
+                        slideAnims.forEach(a => {
+                            a.style.opacity = '1';
+                            a.style.transform = 'translateY(0)';
+                        });
+
+                        if (dots[i]) {
+                            dots[i].classList.remove('bg-outline-variant');
+                            dots[i].classList.add('bg-primary');
+                        }
+                    } else {
+                        slide.classList.add('pointer-events-none');
+                        slide.style.opacity = '0';
+
+                        slideTitles.forEach(t => {
+                            t.style.opacity = '0';
+                            t.style.transform = 'translateY(2rem)';
+                        });
+                        slideAnims.forEach(a => {
+                            a.style.opacity = '0';
+                            a.style.transform = 'translateY(2rem)';
+                        });
+
+                        if (dots[i]) {
+                            dots[i].classList.add('bg-outline-variant');
+                            dots[i].classList.remove('bg-primary');
+                        }
+                    }
+                });
+                if (counter) counter.innerText = `0${index + 1} / 0${totalSlides}`;
+            }
+
+            function nextSlide() { currentSlide = (currentSlide + 1) % totalSlides; renderSlide(currentSlide); }
+            function prevSlide() { currentSlide = (currentSlide - 1 + totalSlides) % totalSlides; renderSlide(currentSlide); }
+
+            document.getElementById('next-slide')?.addEventListener('click', () => { nextSlide(); resetInterval(); });
+            document.getElementById('prev-slide')?.addEventListener('click', () => { prevSlide(); resetInterval(); });
+            dots.forEach(dot => { dot.addEventListener('click', (e) => { currentSlide = parseInt(e.target.getAttribute('data-index')); renderSlide(currentSlide); resetInterval(); }); });
+
+            function resetInterval() { clearInterval(autoInterval); autoInterval = setInterval(nextSlide, 8000); }
+            renderSlide(0);
+            resetInterval();
+        });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <!-- Video Player Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const video = document.getElementById('luxury-video');
+            const overlay = document.getElementById('video-overlay');
+            const playIcon = document.getElementById('play-icon');
+            const playToggle = document.getElementById('video-play-toggle');
+            const seek = document.getElementById('video-seek');
+            const currentTimeEl = document.getElementById('current-time');
+            const durationEl = document.getElementById('duration');
+            const muteBtn = document.getElementById('video-mute');
+            const fullscreenBtn = document.getElementById('video-fullscreen');
+
+            function togglePlay() {
+                if (video.paused) {
+                    video.play();
+                    playIcon.innerText = 'pause';
+                    playToggle.querySelector('span').innerText = 'pause';
+                    overlay.style.opacity = '0';
+                    overlay.style.pointerEvents = 'none';
+                } else {
+                    video.pause();
+                    playIcon.innerText = 'play_arrow';
+                    playToggle.querySelector('span').innerText = 'play_arrow';
+                    overlay.style.opacity = '1';
+                    overlay.style.pointerEvents = 'auto';
+                }
+            }
+
+            overlay.addEventListener('click', togglePlay);
+            playToggle.addEventListener('click', togglePlay);
+            video.addEventListener('click', togglePlay);
+
+            video.addEventListener('timeupdate', () => {
+                const percent = (video.currentTime / video.duration) * 100;
+                seek.value = percent;
+                currentTimeEl.innerText = formatTime(video.currentTime);
+            });
+
+            video.addEventListener('loadedmetadata', () => {
+                durationEl.innerText = formatTime(video.duration);
+            });
+
+            seek.addEventListener('input', () => {
+                const time = (seek.value / 100) * video.duration;
+                video.currentTime = time;
+            });
+
+            muteBtn.addEventListener('click', () => {
+                video.muted = !video.muted;
+                muteBtn.querySelector('span').innerText = video.muted ? 'volume_off' : 'volume_up';
+            });
+
+            fullscreenBtn.addEventListener('click', () => {
+                if (video.requestFullscreen) video.requestFullscreen();
+                else if (video.webkitRequestFullscreen) video.webkitRequestFullscreen();
+            });
+
+            function formatTime(seconds) {
+                const h = Math.floor(seconds / 3600);
+                const m = Math.floor((seconds % 3600) / 60);
+                const s = Math.floor(seconds % 60);
+                return [m, s].map(v => v < 10 ? "0" + v : v).join(":");
+            }
+        });
+    </script>
+</body>
+
+</html>
